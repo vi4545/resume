@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Resume genertaor</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<!--strt html code -->
+<div class="main-container"  id="cv-form">
+    <div class="main-title">
+        <h1>Resume Generator</h1>
+    </div>
+<div class="container container-manual" id="cv-form">
+    <div class="row">
+        <div class="col-md-6">
+
+            <h3>Personal information</h3>
+
+            <div class="form-group">
+                <label for="nameField"> Your Name</label>
+                <input type="text" id="nameField" class="form-control" placeholder="Enter here"/>
+            </div>
+
+
+            <div class="form-group">
+                <label for="contactField">Phone No: </label>
+                <input type="text" id="contactField" class="form-control" placeholder="Enter here">
+            </div>
+
+
+            <div class="form-group">
+                <label for="address Field"> Your address </label>
+                <textarea type="text" rows="3" id="addressField" class="form-control" placeholder="Enter here"></textarea>
+            </div>
+
+            <p class="text-secondary my-3">Important Links</p>
+
+            <div class="form-group mt-2" >
+                <label for="fbField">facebook </label>
+                <input type="text" id="fbField" placeholder="Enter here" class="form-control">
+            </div>
+
+
+            <div class="form-group mt-2" >
+                <label for="instaField">Instagram </label>
+                <input type="text" id="instaField" placeholder="Enter here" class="form-control">
+            </div>
+
+
+            <div class="form-group mt-2" >
+                <label for="linkedField">Linkedin </label>
+                <input type="text" id="linkedField" placeholder="Enter here" class="form-control">
+            </div>
+
+
+
+        </div>
+
+
+
+
+        <div class="col-md-6">
+            <h3>Professional information</h3>
+
+            <div class="form-group">
+                <label for=""> Objective field </label>
+                <textarea type="text" rows="1" 
+                id="objectiveField" class="form-control weField" placeholder="Enter here"></textarea>
+            </div>
+
+            <div class="form-group mt-2" id="we">
+                <label for=""> work experience </label>
+                <textarea type="text" rows="1"  class="form-control weField" placeholder="Enter here"></textarea>
+
+                <div class="container text-center mt-2 "id="weAddButton"  >
+                    <button class="btn btn-primary btn-sm gap-btn" onclick="addExperience() ">Add</button>
+                </div>
+
+            </div>
+
+
+
+
+            <div class="form-group" id="aq" >
+                <label for=""> Academic Qualification </label>
+                <textarea
+                 type="text" 
+                 rows="1" 
+                 class="form-control aqField" 
+                  placeholder="Enter here">
+                </textarea>
+
+                <div class="container text-center mt-2" id="aqAddButton">
+                    <button onclick="addAcademic()" class="btn btn-primary btn-sm gap-btn">Add</button>
+                </div>
+                
+            </div>
+
+           
+
+        </div>
+    </div>
+    <!--generate cv-->
+
+    <div class="container text-center mt-3">
+        <button  onclick="generatecv()" class="btn btn-primary btn-ig  gap-btn rto ">Generate CV</button>
+
+    </div>
+</div>
+</div>
+
+
+
+<!--cv template dynamically-->
+
+<div class="container" id="cv-template">
+    <div class="row">
+       
+        <div class="col-md-4 text-center py-4 background">
+             <!--first column-->
+             <img src="image/profile.webp" alt="" class="img-fluid myimg">
+             <div class="contianer">
+                 <h2 id="nameT1">Your Name here  </h2>
+                 <span id="contactT">+910123456789 </span>
+                 <p class="ad">Your address </p>
+                 <hr/>
+
+                 <p>
+                     <a id="fbT" href="#1">https://www.facebook.com/</a>
+                 </p>
+                 <p>
+                     <a id="instaT" href="#2">https://www.instagram.com/?hl=en</a>
+                 </p>
+                 <p>
+                     <a  id="linkedT"href="#3">https://linked.com/i/flow/login</a>
+                 </p>
+             </div>
+
+        </div>
+
+       
+        <div class="col-md-8">
+             <!--second column-->
+             <h1 id="nameT2"class="text-center title-name">
+                 YOUR NAME HERE
+                </h1>
+
+                       <!--objective -->
+                <div class="card mt-4">
+                 
+                    <div class="card-header background">
+                        <h3>Objective</h3>
+                    </div>
+                    <div class="class-body">
+                        <p id="Objective">
+                            Mahesh Babu - Wikipediahttps:/wikipedia.orgMahesh_Babu
+                            Ghattamaneni Mahesh Babu (born 9 August 1975) is an Indian actor, producer, media personality, and philanthropist who works mainly in Telugu cinema.</p>
+                    </div>
+                </div>
+                <!--work-experience-->
+                <div class="card mt-4">
+                    <div class="card-header background">
+                        <h3>Work-Experience</h3>
+                    </div>
+                    <div class="class-body ">
+                        <ul id="weT">
+                           </ul>
+                       
+                    </div>
+                </div>
+
+                <!--Academic Qualofication-->
+                <div class="card mt-4">
+                    <div class="card-header background">
+                        <h3>Academic-Qualification</h3>
+                    </div>
+                    <div class="class-body ">
+                        <ul id="aqT"></ul>
+                       
+                    </div>
+                </div>
+
+                <!--cv generate-->
+                <div class="container text-center mt-3">
+                    <button  onclick="printcv()"class="btn background  gap-btn rto" >CV GENERATE
+
+                    </button>
+                </div>
+
+
+
+
+        </div>
+    </div>
+
+</div>
+
+
+
+ 
+
+
+
+
+
+
+
+    
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="logic.js"></script>
+</html>

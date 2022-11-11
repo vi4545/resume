@@ -1,0 +1,70 @@
+.container{
+    background-color: rgb(255, 255, 255);
+}
+#cv-template{
+    display: none;
+}
+body{
+    background-color:rgb(56, 225, 240);
+}
+.myimg{
+   
+   
+
+    width:250px;
+    border-radius: 47%;
+}
+.background{
+    background-color: rgb(236, 233, 100);
+}
+.title-name{
+    color: rgb(255, 87, 45);
+    font-weight: 650;
+}
+.container-manual{
+    border: .5px solid rgb(0, 0, 0);
+    margin-top: 30px;
+    border-radius: 2%;
+    margin-bottom: 60px;
+}
+.main-title{
+    
+    
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+  
+}
+
+.main-title h1{
+    margin-top: 10px;
+    color: red;
+    background-color: rgb(145, 223, 71);
+    width: 340px;
+    height: 90px;
+    text-align: center;
+    border-radius: 10%;
+   
+
+}
+.main-title h1:hover{
+    background-color:black;
+    color: white;
+    border-radius: 20%;
+}
+
+.gap-btn{
+    background-color: rgb(255, 230, 9);
+
+    color: black;
+    font-weight: 50px;
+    width: 120px;
+    font-weight: 700;
+    padding: 19px;
+}
+.rto{
+    background-color:green;
+    color: aliceblue;
+    padding: 16px;
+    margin-bottom: 18px;
+}
